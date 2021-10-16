@@ -17,9 +17,9 @@ namespace LibApp.Controllers
             return View(firstBook);
         }
 
-        public IActionResult Edit(int bookId)
+        public IActionResult Edit(int id)
         {
-            return Content("id=" + bookId);
+            return Content("id=" + id);
         }
 
         public IActionResult Index(int? pageIndex, string sortBy)
@@ -35,6 +35,11 @@ namespace LibApp.Controllers
             }
 
             return Content($"pageIndex={pageIndex}&sortBy={sortBy}");
+        }
+
+        public IActionResult ByReleaseDate(int year, int month)
+        {
+            return Content(year + "/" + month);
         }
     }
 }
